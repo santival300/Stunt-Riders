@@ -1,15 +1,18 @@
 <?php
-
     session_start();
 
-    if(!isset($_SESSION['id_usuario'])){
-        header("location: indexlogin.php");
+    header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+    header("Cache-Control: post-check=0, pre-check=0", false);
+    header("Pragma: no-cache");
 
+    if (!isset($_SESSION['id_usuario'])) {
+        header("Location: indexlogin.php");
+        exit();
     }
 
     $nombre = $_SESSION['nombre'];
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -34,6 +37,7 @@
     <link href="css/sb-admin-2.css" rel="stylesheet">
 
 </head>
+
 
 <body id="page-top">
 
@@ -65,9 +69,9 @@
             <!-- Divider -->
             <hr class="sidebar-divider">
 
-            <!-- Heading -->
+            <!-- Heading -->    
             <div class="sidebar-heading">
-                Interface
+                General
             </div>
 
             <!-- Nav Item - Pages Collapse Menu -->
@@ -503,7 +507,7 @@
                 <div class="modal-body">Si deseas cerrar sesión, haz clic en el botón ‘Cerrar sesión’ a continuación. Esto finalizará tu sesión actual de manera segura.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-primary" href="indexlogin.php">Cerrar Sesión</a>
+                    <a class="btn btn-primary" href="logout.php">Cerrar Sesión</a>
                 </div>
             </div>
         </div>

@@ -25,7 +25,7 @@ session_start();
                 $_SESSION['tipo_usuario']=$row['tipo_usuario'];
 
 
-               header("location: indexdash.php ");
+               header("location: indexdash.php");
 
             }else{
                 echo "La contraseña no coincide";
